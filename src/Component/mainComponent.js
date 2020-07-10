@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -39,13 +41,15 @@ class Main extends Component {
               );
         });
         return (
-            <div className="container"><br />
+            <div >
+              <Header />
               <Media heading>Shared Files</Media>
               <div className="row">
                 <Media list>
                     {file}
                 </Media>
               </div>
+              <Footer />
             </div>
           );
     }
