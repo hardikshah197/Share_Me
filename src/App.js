@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import Main from './Component/mainComponent';
 import './App.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
 
@@ -11,6 +12,7 @@ function App() {
           <NavbarBrand href="/">Sharo Transfeto</NavbarBrand>
         </div>
       </Navbar>
+      <Main />
     </div>
   );
 }
