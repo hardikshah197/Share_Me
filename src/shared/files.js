@@ -30,4 +30,4 @@ export const FILES =
         image:'assert/image/logo.png',
         description:'file 5 description dfnvdfn;vbinsrtiogbnersoignrtsnboidrsnbipoerjgikermnkm'
         }
-    ]
+    ];

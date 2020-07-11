@@ -38,9 +38,9 @@ function Footer(props) {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center">             
-                    <div className="col-auto">
-                        <p>© Copyright 2020 Filo Transfo</p>
+                <div className="row justify-content-center">            
+                    <div className="col-auto"> <br/>
+                        <p>© Copyright 2020 Filo Transfo with ❤️❤️❤️ by Hardik Sharma</p>
                     </div>
                 </div>
             </div>

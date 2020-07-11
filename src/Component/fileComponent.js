@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardBody, CardText, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
-class FileDetail extends Component {
 
- renderFile(file) {
-    if(file != null) {
+ function RenderFile({file}) {
       return(
         <div className="row">
           <Card>
-          <div class="ml-5 bg-warning">
-              <CardImg  src={file.image} alt={file.name}  />
+            <div class="ml-5 bg-warning">
+              <CardImg src={file.image} alt={file.name} />
             </div>
           </Card>
           <Card>
@@ -21,25 +20,28 @@ class FileDetail extends Component {
         </div>
       )
     }
-    else{
-      return(
-        <div></div>
-      )
-    }
-  }
 
-  render() {
-    const file = this.props.file
-    if(file == null) {
+  const FileDetail = (props) => {
+    if(props.file == null) {
       return (<div></div>)
     }
-    const fileItem = this.renderFile(file)
     return (
-      <div className='row'>
-        {fileItem}
+      <div class='container'>
+        <div className='row'>
+            <Breadcrumb>
+              <BreadcrumbItem><Link to="/history">History</Link></BreadcrumbItem>
+              <BreadcrumbItem active>{props.file.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <div className='col-12'>
+              <h3>{props.file.name}</h3>
+              <hr />
+            </div>
+          </div>
+        <div className='row'>
+          <RenderFile file={props.file} />
+        </div>
       </div>
     )
   }
-}
 
 export default FileDetail;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Home from './HomeComponent'
-import { Card, CardImg, CardImgOverlay, CardText,CardBody,CardTitle } from 'reactstrap';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
+import { Card, CardImg, CardImgOverlay, CardText,CardBody,CardTitle,Breadcrumb,BreadcrumbItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
+ 
 class Menu extends Component {
     constructor(props) {
         super(props);
@@ -10,45 +9,40 @@ class Menu extends Component {
       }
     
 
-
-    // renderFile = (file) => {
-    //   if(file != null) {
-    //     return(
-    //       <FileDetail file={file}></FileDetail>
-    //     )
-    //   }
-    //   else{
-    //     return(<div></div>)
-    //   }
-    // }    
-
     render() { 
       const filo = this.props.files.map((fil) => {
         return (
             <div key={fil.id} className="col-12 col-md-2 m-3" margin-left="40px">
-              <Card onClick={() => this.props.onClick(fil.id)}>                    
+              <Card >
+                <Link to={`/menu/${fil.id}`}>
                     <CardImg src={fil.image} alt={fil.name} width="100px" />
                   <CardImgOverlay>
                   <CardTitle heading>{fil.name}</CardTitle>
                   
                   </CardImgOverlay>
+                  </Link>                    
               </Card><br />
             </div>
           );
     });
         return (
-            <div >
+            <div className="container">
               
-              <div className="container">
-            <h4>Shared History</h4>
+              
+                <div className='row'>
+                  <Breadcrumb>
+                  <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                  <BreadcrumbItem active>History</BreadcrumbItem>
+                  </Breadcrumb>
+                  <div className='col-12'>
+                    <h3>Shared History</h3>
+                    <hr />
+                  </div>
                 </div>
               <div className="row">
                   {filo}              
               </div>
-              {/* <div className="row">
-                {this.renderFile(this.state.selectedFile)}
-              </div> */}
-            
+              
               
             </div>
           );
