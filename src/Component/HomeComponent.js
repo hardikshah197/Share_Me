@@ -37,7 +37,7 @@ class Home extends Component {
                     </Card><br /><br/>
                     <p>Click on the "Choose File" button to upload a file:</p><br />
                     <input type="file" class="form-control-file border"></input><br/><br/>
-                    <Button outline onClick={this.toggleModal}><span className="fa fa-sign-in fa-lg"></span>Submit</Button>
+                    <Button outline onClick={this.toggleModal}><span className="fa fa-sign-in fa-lg"></span>Share</Button>
                     </div>
                     </div>
                 </div>
